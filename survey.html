@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crush Test</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6eb;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            position: relative;
+            width: 300px;
+            height: 150px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+        }
+
+        #yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #no {
+            position: absolute;
+            background-color: #999;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Crush moko? YES or NO 💘</h1>
+
+    <div class="buttons">
+        <button id="yes" onclick="alert('Ayyieee! 💕')">YES</button>
+        <button id="no">NO</button>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("no");
+        const container = document.querySelector(".buttons");
+
+        noBtn.addEventListener("mouseover", () => {
+            const maxX = container.clientWidth - noBtn.offsetWidth;
+            const maxY = container.clientHeight - noBtn.offsetHeight;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+        });
+    </script>
+
+</body>
+</html>
